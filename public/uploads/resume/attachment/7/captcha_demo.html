@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple CAPTCHA Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .captcha-container {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .captcha {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            user-select: none;
+            margin-bottom: 10px;
+        }
+        .refresh-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .refresh-button:hover {
+            background-color: #0056b3;
+        }
+        .input-container {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="captcha-container">
+    <div id="captcha" class="captcha"></div>
+    <button class="refresh-button" onclick="generateCaptcha()">Refresh CAPTCHA</button>
+    <br><br>
+    <div class="input-container">
+        <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" autocomplete="off" required>
+    </div>
+
+    <button class="refresh-button" onclick="validateCaptcha()">Submit</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function generateCaptcha() {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let captcha = '';
+        for (let i = 0; i < 6; i++) {
+            captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        document.getElementById('captcha').textContent = captcha;
+    }
+
+    function validateCaptcha() {
+        const captchaText = document.getElementById('captcha').textContent;
+        const userText = document.getElementById('captchaInput').value;
+        const result = document.getElementById('result');
+
+        if (userText === captchaText) {
+            result.textContent = 'CAPTCHA matched!';
+            result.style.color = 'green';
+        } else {
+            result.textContent = 'CAPTCHA did not match. Please try again.';
+            result.style.color = 'red';
+        }
+    }
+
+    // Generate initial CAPTCHA when the page loads
+    window.onload = generateCaptcha;
+</script>
+
+</body>
+</html>

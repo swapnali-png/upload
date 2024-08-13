@@ -1,0 +1,75 @@
+Today I studied  STLC  and its different phases :-
+
+
+
+1) It stands for Software Testing Life Cycle. STLC process defines various activities to improve the quality of the product.
+
+2) STLC is a sequence of different activities performed by testing team.
+
+3) STLC is a integral part of SDLC. But STLC deals only with testing phases.
+
+4) STLC provides a step by step process to ensure quality software.
+
+5) This is helps to find bugs/error in the initial phase.
+
+6) STLC has different phases which are as follow :-
+
+
+Test Requirement Phase :- find out requirement testable or not
+
+Test Analysis Phase :- Identification of the test condition
+
+Text Planing Phase :- Identify the activity
+
+Test Case Designing Phase :- Develop the test cases based on scope
+
+Implementation Phase :- Environment Setup
+
+Test Execution Phase :- Actual execution
+
+Test Conclusion Phase :- DSR-Daily Status Report and WSR-Weekly status Report
+
+Test Closure Phase :- Scope of improvement
+
+
+Bug Life Cycle :-
+
+
+
+1) Bug life cycle is also known as Defect life cycle in software testing
+
+2) Following are the different states of defect/bug life cycle :-
+       New , Assigned, Open, Fixed, Pending retest, Retest, Verified, Reopen, Closed, Duplicate, Rejected, Not a Bug
+
+
+
+"Reopened" status can used by Developer for bug update.
+
+
+
+Bugzilla :-
+
+
+
+1) Bugzilla is a web based general purpose bug tracking system and testing tool.
+
+2) It is a open source bug or issue tracking system.
+
+3)Also It is a  defect tracking tool.
+
+4) It widely used for bug reporting tool for all types of testing function.
+
+5) Bugzilla is web based system but needs to be installed on our server for use it.
+
+
+
+
+
+Today I covered 80%.
+
+
+
+
+
+
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        fieldset {
+            width: 30%;
+            background-color: powderblue;
+            border: 2px solid #87ceeb;
+            border-radius: 8px;
+            padding: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">   
+<% if !@resume.errors.empty? %>   
+   <div>   
+         
+      <ul>   
+         <% @resume.errors.full_messages.each do |msg| %>   
+            <li><%= msg %></li>   
+         <% end %>  
+       </ul>
+     </div>
+<% end %>
+
+<div class="container">   
+<% if !@resume.errors.empty? %>   
+   <div>   
+         
+      <ul>   
+         <% @resume.errors.full_messages.each do |msg| %>   
+            <li><%= msg %></li>   
+         <% end %>   
+      </ul>   
+         
+   </div>   
+<% end %>
+</div>   
+<center>
+<div>   
+    <fieldset>
+      <%= form_for @resume, html: { multipart: true } do |f| %>   
+          <%= f.label :name %>   
+          <%= f.text_field :name %>   
+          <br><br>   
+          <%= f.label :attachment %>   
+          <%= f.file_field :attachment %>   
+          <br><br> 
+          <%= f.submit "Save" %>   
+      <% end %>
+    </fieldset>   
+</div>
+</center>    
+</div>
+
+ </body>
+</htmml>
